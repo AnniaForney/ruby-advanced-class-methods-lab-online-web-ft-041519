@@ -3,6 +3,11 @@ class Song
   attr_accessor :name, :artist_name
   @@all = []
 
+def intialize(name)
+  @name = name
+  @songs = []
+end
+
   def self.all
     @@all
   end
@@ -15,6 +20,10 @@ class Song
 def self.create
   song = Song.new
   song.save
+<<<<<<< HEAD
+=======
+  song
+>>>>>>> 9b0bc041a92c1ae95df164ef2232fa17445af468
 end
 
 def self.new_by_name(song_name)
@@ -24,8 +33,14 @@ def self.new_by_name(song_name)
 end
 
 def self.create_by_name(song_name)
+<<<<<<< HEAD
   song = self.new_by_name(song_name)
   song.save
+=======
+  song = self.create
+  song.name = song_name
+  song
+>>>>>>> 9b0bc041a92c1ae95df164ef2232fa17445af468
 end
 
 def self.find_by_name(song_name)
@@ -41,6 +56,7 @@ def self.alphabetical
 end
 
 def self.new_from_filename(filename)
+<<<<<<< HEAD
   #binding.pry
   filename = filename.split(" - ")
   artist_name =  filename[0]
@@ -60,6 +76,22 @@ def self.create_from_filename(filename)
   song.name = song_title
   song.artist_name = artist_name
   song
+=======
+  filename = filename.split(".")
+  file =  filename[0]
+  binding.pry
+  artist_name = artist_name.split(".")
+  artist = artist_name [1]
+  song = songname.split(".")
+  song = song_name [2]
+
+  
+end
+  #file
+  #end
+
+def create_from_filename (file_name)
+>>>>>>> 9b0bc041a92c1ae95df164ef2232fa17445af468
 end
 
 def self.destroy_all
